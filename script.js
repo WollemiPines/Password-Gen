@@ -23,18 +23,22 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-// Add internals to the function "generatePassword"
+// Function "generatePassword"
 function generatePassword(){
+
+  //Prompt for user to select password length
 
   pasLength=prompt("Please pick a length between 8 and 128 charaters");
 
+  //If inncorect length, script is ended and must be re-run
   if (pasLength<8 || pasLength>128){
   alert("Not allowed, please try again");
   return;
   } 
 
-  letters=prompt("Use letters? Type 'Y'. If you do not want to use letters, type any other key", "Y");
+  //Other user inputs. For each input, if the answer is "Y", the gobal variable is added to the "basket"
 
+  letters=prompt("Use letters? Type 'Y'. If you do not want to use letters, type any other key", "Y");
   if  (letters.toUpperCase()==="Y") {
     basket= pasLetters;
   }
@@ -56,8 +60,8 @@ function generatePassword(){
   if(basket===""){
     alert("You've gotta use something for a password!");
   }
-  console.log(basket);
-  console.log(pasLength);
+
+  //For loop: characters are picked at random from the basket of options, until the result is equal to the pasLength variable
   
   for ( var i = 0; i < pasLength; i++ ) {
     result += basket.charAt(Math.floor(Math.random() * basket.length ));
