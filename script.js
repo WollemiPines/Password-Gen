@@ -4,8 +4,8 @@ var pasLetters="abcdefghijklmnopqrstuvwxyz";
 let pasUppercase = pasLetters.toUpperCase();
 var pasNumbers="123456789";
 var pasSymbols="!@#$%^&*()+=:;<>~`?/-_";
-var basket="";
 var result="";
+var basket="";
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -24,6 +24,7 @@ generateBtn.addEventListener("click", writePassword);
 
 
 // Function "generatePassword"
+
 function generatePassword(){
 
   //Prompt for user to select password length
@@ -34,13 +35,19 @@ function generatePassword(){
   if (pasLength<8 || pasLength>128){
   alert("Not allowed, please try again");
   return;
-  } 
+  }
 
   //Other user inputs. For each input, if the answer is "Y", the gobal variable is added to the "basket"
-
+  if ( result/="" ){
+    basket="";
+    } 
+    else{
   letters=prompt("Use letters? Type 'Y'. If you do not want to use letters, type any other key", "Y");
   if  (letters.toUpperCase()==="Y") {
     basket= pasLetters;
+  }
+  else {
+    basket="";
   }
   uppercase=prompt("Use uppercase? Type 'Y'. If you do not want to use uppercase, type any other key", "Y");
   
@@ -60,13 +67,15 @@ function generatePassword(){
   if(basket===""){
     alert("You've gotta use something for a password!");
   }
+  console.log(basket);
+}
+
 
   //For loop: characters are picked at random from the basket of options, until the result is equal to the pasLength variable
   
   for ( var i = 0; i < pasLength; i++ ) {
-    result += basket.charAt(Math.floor(Math.random() * basket.length ));
- 
+    result += (basket.charAt(Math.floor(Math.random() * basket.length )));
  }
- return result;
-}
+return result;
 
+}
