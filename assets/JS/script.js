@@ -76,6 +76,11 @@ function generatePassword(){
   for ( var i = 0; i < pasLength; i++ ) {
     result += (basket.charAt(Math.floor(Math.random() * basket.length )));
  }
+//  For some reason the code is generatating a password combination that attempts to put a value in fron that is not a number.
+// This section is cleared with .replace
+ result = result.replace(/^NaN+/, '');
+
+//  Ends function
 return result;
 
 }

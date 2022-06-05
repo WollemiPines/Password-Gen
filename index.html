@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- Head -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/Styles/style.css" />
   </head>
+  <!-- Body -->
   <body>
     <div class="wrapper">
+      <!-- Header -->
       <header>
         <h1>Password Generator</h1>
       </header>
+      <!-- Card, bulk of the content -->
       <div class="card">
         <div class="card-header">
           <h2>Generate a Password</h2>
         </div>
+        <!-- Card body contains the generated password -->
         <div class="card-body">
           <textarea
             readonly
@@ -24,11 +29,13 @@
             aria-label="Generated Password"
           ></textarea>
         </div>
+        <!-- card footer contains button -->
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+    <!-- linking to JS file -->
+    <script src="./assets/JS/script.js"></script>
   </body>
 </html>

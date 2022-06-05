@@ -1,3 +1,5 @@
+
+/* Whole document */
 *,
 *::before,
 *::after {
@@ -17,12 +19,14 @@ body {
   background-color: #f9fbfd;
 }
 
+/* Still whole doc, head and body are inside wrapper */
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
+/* Pasword Generator title text */
 header {
   text-align: center;
   padding: 20px;
@@ -30,6 +34,7 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* Generate Password box + button and text output box */
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -54,6 +59,7 @@ header {
   min-height: 100px;
 }
 
+/* card footer = button */
 .card-footer {
   text-align: center;
 }
@@ -102,6 +108,7 @@ button[disabled] {
   float: right;
 }
 
+/* styling for the generated password */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -123,6 +130,7 @@ button[disabled] {
   overflow: hidden;
 }
 
+/* active screen resizing */
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
